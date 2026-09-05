@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
+  <title>Portal - Repository Index</title>
   <style>
     * {
       box-sizing: border-box;
@@ -17,66 +17,142 @@
       justify-content: center;
       align-items: center;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      /* 桃色（#fbc2eb）から藤色（#a6c1ee）へのグラデーション背景 */
+      /* 桃色（#fbc2eb）から藤色（#a6c1ee）へのグラデーション */
       background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
       background-attachment: fixed;
-      color: #4a4a4a;
+      color: #333;
+      padding: 20px;
     }
 
-    /* グラスモーフィズム（すりガラス効果）のカード */
+    /* グラスモーフィズムカード容器 */
     .glass-card {
       background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 20px;
-      padding: 3rem 2.5rem;
-      width: 90%;
-      max-width: 480px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 800px;
       box-shadow: 0 8px 32px 0 rgba(166, 193, 238, 0.37);
-      text-align: center;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #333;
-      letter-spacing: 0.05em;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+      text-align: center;
     }
 
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+    p.subtitle {
+      text-align: center;
+      font-size: 0.95rem;
       color: #555;
+      margin-bottom: 2rem;
     }
 
-    .btn {
+    /* テーブルデザイン */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    th {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #444;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    td {
+      font-size: 0.95rem;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* タグ表示 */
+    .tag {
       display: inline-block;
-      padding: 0.8rem 2rem;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50px;
-      text-decoration: none;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
       font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.5);
+      color: #4a4a4a;
     }
 
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.5);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    /* リンクボタン */
+    .link-btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      color: #4a4a4a;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-1px);
     }
   </style>
 </head>
 <body>
 
   <main class="glass-card">
-    <h1>Hello World</h1>
-    <p>桃色と藤色が織りなす、透明感のあるグラスグラデーションの世界へようこそ。</p>
-    <a href="./ai/" class="btn">View Project AI</a>
+    <h1>Site Directory</h1>
+    <p class="subtitle">gemini.github.io の公開コンテンツ一覧</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>プロジェクト名</th>
+            <th>概要</th>
+            <th>カテゴリ</th>
+            <th>リンク</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Project</strong></td>
+            <td>人工知能・実験用リポジトリ</td>
+            <td><span class="tag">AI / Dev</span></td>
+            <td><a href="./ai/" class="link-btn">訪問する ➔</a></td>
+          </tr>
+          <tr>
+            <td><strong>Lab Notes</strong></td>
+            <td>開発ノウハウ・技術検証ログ</td>
+            <td><span class="tag">Docs</span></td>
+            <td><a href="./lab/" class="link-btn">訪問する ➔</a></td>
+          </tr>
+          <tr>
+            <td><strong>Profile</strong></td>
+            <td>自己紹介・各種SNSリンク</td>
+            <td><span class="tag">About</span></td>
+            <td><a href="./profile/" class="link-btn">訪問する ➔</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 
 </body>
